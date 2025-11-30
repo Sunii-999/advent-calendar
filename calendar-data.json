@@ -2,203 +2,178 @@
   "days": [
     {
       "day": 1,
-      "title": "Day 1: A Cozy Start",
+      "title": "Spotify playlist",
       "content": "Playlist for my BABBBBYYYYY",
-      "link": "",
-      "isOpened": false,
-      "isImage": false
+      "link": "https://open.spotify.com/playlist/7vkZqVEmJCy2yDDRnDMr8t?si=bd6b11de6e0942a2&pt=106a71d5cc6f88ba8d7286ec0fb09204",
+      "image": null
     },
     {
       "day": 2,
-      "title": "Day 2: Morning Treat",
-      "content": "",
-      "link": "",
-      "isOpened": false,
-      "isImage": false
+      "title": "Handwritten Note",
+      "content": "I love you more than words can say. Here's a little note I wrote for you.",
+      "link": null,
+      "image": "images/notes.jpeg"
     },
     {
       "day": 3,
-      "title": "Day 3: Adventure Time",
-      "content": "",
-      "link": "",
-      "isOpened": false,
-      "isImage": false
+      "title": "Adventure Time",
+      "content": "Time to plan a mini-adventure!",
+      "link": null,
+      "image": null
     },
     {
       "day": 4,
-      "title": "Day 4: Your Choice",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 5,
-      "title": "Day 5: Long Hug",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 6,
-      "title": "Day 6: Dinner's On Me",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 7,
-      "title": "Day 7: New Playlist",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 8,
-      "title": "Day 8: Bookworm Bliss",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 9,
-      "title": "Day 9: Memory Lane",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 10,
-      "title": "Day 10: Surprise Treat",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 11,
-      "title": "Day 11: Future Planning",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 12,
-      "title": "Day 12: Massage Coupon",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 13,
-      "title": "Day 13: Good Deeds",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 14,
-      "title": "Day 14: Sweet Silence",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 15,
-      "title": "Day 15: Your Compliment",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 16,
-      "title": "Day 16: Game Night",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 17,
-      "title": "Day 17: Window Shopping",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 18,
-      "title": "Day 18: Hand-Holding",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 19,
-      "title": "Day 19: Photo Op",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 20,
-      "title": "Day 20: Hot Drink Run",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 21,
-      "title": "Day 21: Spa Day at Home",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 22,
-      "title": "Day 22: Movie marathon",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 23,
-      "title": "Day 23: Last Minute Gift",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 24,
-      "title": "Day 24: Christmas Eve Special",
-      "content": ".",
+      "title": "",
+      "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     },
     {
       "day": 25,
-      "title": "Day 25: Merry Christmas!",
+      "title": "",
       "content": "",
       "link": "",
-      "isOpened": false,
-      "isImage": false
+      "image": ""
     }
   ]
 }

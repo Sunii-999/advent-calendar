@@ -5,29 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advent Calendar 🎄</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Georgia', serif;
             background: linear-gradient(135deg, #ebf1f7 0%, #ffffff 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #fff;
-            position: relative;
-            overflow-x: hidden;
+            min-height: 100vh; padding: 20px; color: #fff;
+            position: relative; overflow-x: hidden;
         }
-
         body::before {
             content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             background-image: 
                 radial-gradient(2px 2px at 20% 30%, white, transparent),
                 radial-gradient(2px 2px at 60% 70%, white, transparent),
@@ -38,229 +25,80 @@
             background-size: 200% 200%;
             background-position: 0% 0%;
             animation: snowfall 20s linear infinite;
-            pointer-events: none;
-            opacity: 0.6;
-            z-index: 1;
+            pointer-events: none; opacity: 0.6; z-index: 1;
         }
-
         @keyframes snowfall {
-            0% {
-                background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-            }
-            100% {
-                background-position: 10% 100%, 20% 100%, 15% 100%, 25% 100%, 30% 100%, 35% 100%;
-            }
+            0% { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%; }
+            100% { background-position: 10% 100%, 20% 100%, 15% 100%, 25% 100%, 30% 100%, 35% 100%; }
         }
-
-        .header,
-        .calendar-grid,
-        .modal {
-            position: relative;
-            z-index: 2;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #72101d;
-        }
-
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .header p {
-            font-size: 1em;
-            opacity: 0.9;
-        }
-
+        .header, .calendar-grid, .modal { position: relative; z-index: 2; }
+        .header { text-align: center; margin-bottom: 30px; color: #72101d; }
+        .header h1 { font-size: 2em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .header p { font-size: 1em; opacity: 0.9; }
         .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-            align-items: end;
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 15px; max-width: 600px; margin: 0 auto; align-items: end;
         }
-
         .day {
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5em; font-weight: bold; cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid rgba(255, 255, 255, 0.4);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
             padding: 20px 10px;
         }
-
         .day:nth-child(5n+1) { height: 100px; }
         .day:nth-child(5n+2) { height: 130px; }
         .day:nth-child(5n+3) { height: 110px; }
         .day:nth-child(5n+4) { height: 140px; }
         .day:nth-child(5n)   { height: 120px; }
-
-        .day:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .day.unlocked {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: #cf2424;
-            color: #cf2424
-        }
-
-        .day.opened {
-            background: linear-gradient(135deg, #cf2424 0%, #72101d 100%);
-            border-color: #195f25;
-            color: white;
-        }
-
-        .day.locked {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .day::before {
-            content: '🎁';
-            position: absolute;
-            font-size: 0.5em;
-            top: 5px;
-            right: 5px;
-            opacity: 0.5;
-        }
-
-        .day.opened::before {
-            content: '✨';
-        }
-
+        .day:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .day.unlocked { background: rgba(255, 255, 255, 0.3); border-color: #cf2424; color: #cf2424; }
+        .day.opened { background: linear-gradient(135deg, #cf2424 0%, #72101d 100%); border-color: #195f25; color: white; }
+        .day.locked { opacity: 0.5; cursor: not-allowed; }
+        .day::before { content: '🎁'; position: absolute; font-size: 0.5em; top: 5px; right: 5px; opacity: 0.5; }
+        .day.opened::before { content: '✨'; }
         .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            overflow-y: auto;
+            display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.8); z-index: 1000;
+            align-items: center; justify-content: center; padding: 20px; overflow-y: auto;
         }
-
-        .modal.active {
-            display: flex;
-        }
-
+        .modal.active { display: flex; }
         .modal-content {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            animation: slideIn 0.3s ease;
-            max-height: 90vh;
-            overflow-y: auto;
+            background: linear-gradient(135deg, #d64b4b 0%, #881f1f 100%);
+            padding: 30px; border-radius: 20px; max-width: 500px; width: 100%;
+            text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: slideIn 0.3s ease; max-height: 90vh; overflow-y: auto;
         }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-content h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .modal-content h3 {
-            font-size: 1.3em;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .modal-image {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .modal-content p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            white-space: pre-line;
-        }
-
+        @keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .modal-content h2 { font-size: 2em; margin-bottom: 10px; }
+        .modal-content h3 { font-size: 1.3em; margin-bottom: 20px; opacity: 0.9; }
+        .modal-image { width: 100%; max-width: 400px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .modal-content p { font-size: 1.1em; line-height: 1.6; margin-bottom: 25px; white-space: pre-line; }
         .close-btn {
             background: rgba(255, 255, 255, 0.3);
-            border: 2px solid #fff;
-            color: #fff;
-            padding: 12px 30px;
-            font-size: 1em;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border: 2px solid #fff; color: #fff; padding: 12px 30px;
+            font-size: 1em; border-radius: 25px; cursor: pointer; transition: all 0.3s ease;
             font-weight: bold;
         }
-
-        .close-btn:hover {
-            background: #fff;
-            color: #667eea;
-        }
-
+        .close-btn:hover { background: #fff; color: #667eea; }
         @media (max-width: 480px) {
-            .calendar-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .header h1 {
-                font-size: 1.5em;
-            }
-
-            .day {
-                font-size: 1.2em;
-            }
-
-            .modal-content {
-                padding: 20px;
-            }
-
-            .modal-content h2 {
-                font-size: 1.5em;
-            }
-
-            .modal-content h3 {
-                font-size: 1.1em;
-            }
+            .calendar-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .header h1 { font-size: 1.5em; }
+            .day { font-size: 1.2em; }
+            .modal-content { padding: 20px; }
+            .modal-content h2 { font-size: 1.5em; }
+            .modal-content h3 { font-size: 1.1em; }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🎄 Advent Calendar 🎄</h1>
+        <h1>🎄 Advent Calendar ✨</h1>
         <p>Open a new surprise each day! 💝</p>
     </div>
 
@@ -277,114 +115,113 @@
     </div>
 
     <script>
-        const DEV_MODE = true; 
+    const DEV_MODE = false; // set to true to test all doors
 
-        let calendarData = {};
+    let calendarData = {};
 
-        async function loadCalendarData() {
-            try {
-                const response = await fetch('calendar-data.json');
-                const data = await response.json();
-                
-                data.days.forEach(dayData => {
-                    calendarData[dayData.day] = {
-                        title: dayData.title,
-                        description: dayData.content,
-                        image: dayData.isImage ? dayData.image : null
-                    };
-                });
-                
-                createCalendar();
-            } catch (error) {
-                console.error('Error loading calendar data:', error);
-                alert('Could not load calendar data. Make sure calendar-data.json is in the same folder!');
-            }
+    async function loadCalendarData() {
+        try {
+            const jsonData = await fetch('calendar-data.json').then(res => res.json());
+            jsonData.days.forEach(dayData => {
+                calendarData[dayData.day] = {
+                    title: dayData.title,
+                    description: dayData.content,
+                    image: dayData.image || null,
+                    link: dayData.link || null
+                };
+            });
+            createCalendar();
+        } catch (error) {
+            console.error('Error loading calendar data:', error);
+            alert('Could not load calendar data. Make sure calendar-data.json is in the same folder!');
         }
+    }
 
-        const today = new Date();
-        const currentDay = today.getDate();
-        const currentMonth = today.getMonth();
-        const isDecember = currentMonth === 11;
+    const today = new Date();
+    const currentDay = today.getDate();
+    const currentMonth = today.getMonth();
+    const isDecember = currentMonth === 11;
 
-        function createCalendar() {
-            const calendar = document.getElementById('calendar');
-            
-            for (let i = 1; i <= 25; i++) {
-                const day = document.createElement('div');
-                day.className = 'day';
-                day.textContent = i;
+    function createCalendar() {
+        const calendar = document.getElementById('calendar');
+        for (let i = 1; i <= 25; i++) {
+            const day = document.createElement('div');
+            day.className = 'day';
+            day.textContent = i;
 
-                const opened = localStorage.getItem(`day-${i}`) === 'opened';
+            const opened = localStorage.getItem(`day-${i}`) === 'opened';
 
-                if (opened) {
-                    day.classList.add('opened');
-                } else if (DEV_MODE) {
-                    day.classList.add('unlocked');
-                } else if (isDecember && i <= currentDay) {
-                    day.classList.add('unlocked');
-                } else {
-                    day.classList.add('locked');
-                }
-                
-                day.addEventListener('click', () => openDay(i));
-                calendar.appendChild(day);
-            }
-        }
-
-        function openDay(day) {
-            const dayElement = document.querySelector(`.day:nth-child(${day})`);
-            
-            if (!isDecember && !DEV_MODE) {
-                alert("The advent calendar opens in December! 🎄");
-                return;
-            }
-            
-            if (day > currentDay && !DEV_MODE) {
-                alert(`This door opens on December ${day}! Be patient! 😊`);
-                return;
-            }
-            
-            const dayData = calendarData[day];
-            
-            if (!dayData) {
-                alert('No surprise for this day yet!');
-                return;
-            }
-            
-            const modal = document.getElementById('modal');
-            const modalDay = document.getElementById('modal-day');
-            const modalTitle = document.getElementById('modal-title');
-            const modalImage = document.getElementById('modal-image');
-            const modalDescription = document.getElementById('modal-description');
-            
-            modalDay.textContent = `Day ${day} 🎁`;
-            modalTitle.textContent = dayData.title || '';
-            modalDescription.textContent = dayData.description || '';
-            
-            if (dayData.image) {
-                modalImage.src = dayData.image;
-                modalImage.style.display = 'block';
+            if (opened) {
+                day.classList.add('opened');
+            } else if (DEV_MODE) {
+                day.classList.add('unlocked'); // all days unlocked in dev mode
+            } else if (isDecember && i <= currentDay) {
+                day.classList.add('unlocked'); // only days <= today
             } else {
-                modalImage.style.display = 'none';
+                day.classList.add('locked');
             }
-            
-            modal.classList.add('active');
-            
-            localStorage.setItem(`day-${day}`, 'opened');
-            dayElement.classList.remove('unlocked');
-            dayElement.classList.add('opened');
+
+            day.addEventListener('click', () => openDay(i));
+            calendar.appendChild(day);
+        }
+    }
+
+    function openDay(day) {
+        if (!DEV_MODE && (day > currentDay || !isDecember)) {
+            alert(day > currentDay ? 
+                  `This door opens on December ${day}! Be patient! 😊` : 
+                  "The advent calendar opens in December! 🎄");
+            return;
         }
 
-        function closeModal() {
-            const modal = document.getElementById('modal');
-            modal.classList.remove('active');
+        const dayData = calendarData[day];
+        if (!dayData) {
+            alert('No surprise for this day yet!');
+            return;
         }
 
-        document.getElementById('modal').addEventListener('click', (e) => {
-            if (e.target.id === 'modal') closeModal();
-        });
+        const modal = document.getElementById('modal');
+        const modalDay = document.getElementById('modal-day');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description');
 
-        loadCalendarData();
+        modalDay.textContent = `Day ${day} 🎁`;
+        modalTitle.textContent = dayData.title || '';
+
+        let descriptionHTML = dayData.description || '';
+        if (dayData.link) {
+            const linkText = '🔗 Click here for your surprise!';
+            descriptionHTML += `\n\n<a href="${dayData.link}" target="_blank" style="color: #fff; text-decoration: underline; font-weight: bold;">${linkText}</a>`;
+            modalDescription.innerHTML = descriptionHTML.replace(/\n/g, '<br>');
+        } else {
+            modalDescription.textContent = dayData.description || '';
+        }
+
+        if (dayData.image) {
+            modalImage.src = dayData.image;
+            modalImage.style.display = 'block';
+        } else {
+            modalImage.style.display = 'none';
+        }
+
+        modal.classList.add('active');
+        localStorage.setItem(`day-${day}`, 'opened');
+
+        const dayElement = document.querySelector(`.day:nth-child(${day})`);
+        dayElement.classList.remove('unlocked');
+        dayElement.classList.add('opened');
+    }
+
+    function closeModal() {
+        document.getElementById('modal').classList.remove('active');
+    }
+
+    document.getElementById('modal').addEventListener('click', (e) => {
+        if (e.target.id === 'modal') closeModal();
+    });
+
+    loadCalendarData();
     </script>
 </body>
 </html>
